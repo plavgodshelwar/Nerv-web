@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download NERV 64 — Autonomous Multi-Agent Office</title>
-  <meta name="description" content="Download NERV 64 for Windows, macOS, or Linux. The autonomous multi-agent office that runs locally on your machine.">
+  <title>Download NERV — Multi-Agent Command Center</title>
+  <meta name="description" content="Download NERV for Windows, macOS, or Linux. A local-first command center for AI coding agents.">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Download Page Specific Polished Styles */
@@ -296,23 +296,23 @@
 
     <!-- Download Hero Heading -->
     <section class="download-hero">
-      <h1 class="download-title">GET NERV 64</h1>
-      <p class="download-sub">The autonomous digital AI workforce. Local-first, private by design, controlled via Web or Telegram.</p>
+      <h1 class="download-title">GET NERV</h1>
+      <p class="download-sub">A local-first command center for your AI coding-agent team.</p>
 
       <!-- Dynamic Detected Platform Card -->
       <div class="detected-platform-card" id="detected-box">
         <div class="detected-left">
           <div class="comp-badge">&#9733; COMPATIBLE WITH YOUR SYSTEM &#9733;</div>
-          <h2 class="detected-os-name" id="detected-os-title">NERV 64 for Windows (x64)</h2>
+          <h2 class="detected-os-name" id="detected-os-title">NERV for Windows (x64)</h2>
           <p class="detected-os-desc" id="detected-os-desc">
-            We detected your system. Download the official installer with integrated local sandbox and background Telegram listener.
+            We detected your system. Download the official NERV installer from the verified GitHub release.
           </p>
 
           <div class="detected-action-row">
-            <a href="#direct-download" class="btn-download-primary" id="detected-download-btn">
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-win-x64-setup.exe" class="btn-download-primary" id="detected-download-btn">
               <span>&#11015; DOWNLOAD FOR WINDOWS (x64)</span>
             </a>
-            <span class="detected-checksum" id="detected-meta">Version 0.6.4 &bull; SHA-256 Verified</span>
+            <span class="detected-checksum" id="detected-meta">Version 0.4.6 &bull; GitHub Release</span>
           </div>
         </div>
 
@@ -331,21 +331,21 @@
         <div class="platform-card" id="card-win">
           <div class="platform-icon-box">&#129679;</div>
           <h4 class="platform-name">WINDOWS</h4>
-          <p class="platform-meta">Windows 10, 11 (64-bit / ARM64)</p>
+          <p class="platform-meta">Windows 10 and 11 (x64)</p>
 
           <div class="download-options-list">
-            <a href="#" class="dl-option-link">
-              <span>NERV 64 Installer (.exe)</span>
-              <span>&darr; 84 MB</span>
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-win-x64-setup.exe" class="dl-option-link">
+              <span>NERV Installer (.exe)</span>
+              <span>&darr; Download</span>
             </a>
-            <a href="#" class="dl-option-link">
-              <span>Portable Standalone (.zip)</span>
-              <span>&darr; 78 MB</span>
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-win-x64-portable.exe" class="dl-option-link">
+              <span>Portable NERV (.exe)</span>
+              <span>&darr; Download</span>
             </a>
           </div>
 
           <div class="terminal-install-box">
-            winget install nerv64
+            Download and run the installer
           </div>
         </div>
 
@@ -356,18 +356,18 @@
           <p class="platform-meta">macOS 12.0+ (Apple Silicon &amp; Intel)</p>
 
           <div class="download-options-list">
-            <a href="#" class="dl-option-link">
-              <span>Apple Silicon (.dmg)</span>
-              <span>&darr; 82 MB</span>
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-mac-universal.dmg" class="dl-option-link">
+              <span>Universal macOS (.dmg)</span>
+              <span>&darr; Download</span>
             </a>
-            <a href="#" class="dl-option-link">
-              <span>Intel Mac (.dmg)</span>
-              <span>&darr; 86 MB</span>
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-mac-universal.zip" class="dl-option-link">
+              <span>Updater archive (.zip)</span>
+              <span>&darr; Download</span>
             </a>
           </div>
 
           <div class="terminal-install-box">
-            brew install nerv64
+            Download and open the disk image
           </div>
         </div>
 
@@ -375,21 +375,17 @@
         <div class="platform-card" id="card-linux">
           <div class="platform-icon-box">&#128039;</div>
           <h4 class="platform-name">LINUX</h4>
-          <p class="platform-meta">Debian, Ubuntu, Fedora, Arch</p>
+          <p class="platform-meta">Linux distributions with x64 support</p>
 
           <div class="download-options-list">
-            <a href="#" class="dl-option-link">
-              <span>Debian / Ubuntu (.deb)</span>
-              <span>&darr; 76 MB</span>
-            </a>
-            <a href="#" class="dl-option-link">
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-linux-x86_64.AppImage" class="dl-option-link">
               <span>Universal (.AppImage)</span>
-              <span>&darr; 80 MB</span>
+              <span>&darr; Download</span>
             </a>
           </div>
 
           <div class="terminal-install-box">
-            curl -fsSL https://nerv.ai/install.sh | bash
+            chmod +x NERV-0.4.6-linux-x86_64.AppImage
           </div>
         </div>
       </div>
@@ -474,22 +470,30 @@
       function detectUserOS() {
         const ua = navigator.userAgent;
         let os = "Windows";
-        let title = "NERV 64 for Windows (x64)";
-        let desc = "We detected Windows on your machine. Download the Windows installer (.exe) with local sandboxing.";
+        const downloads = {
+          windows: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-win-x64-setup.exe",
+          mac: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-mac-universal.dmg",
+          linux: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.6/NERV-0.4.6-linux-x86_64.AppImage"
+        };
+        let title = "NERV for Windows (x64)";
+        let desc = "We detected Windows on your machine. Download the official NERV installer (.exe).";
         let btnText = "⬇ DOWNLOAD FOR WINDOWS (.EXE)";
+        let downloadUrl = downloads.windows;
         let highlightId = "card-win";
 
         if (ua.indexOf("Mac") !== -1) {
           os = "macOS";
-          title = "NERV 64 for macOS (Apple Silicon / Intel)";
-          desc = "We detected macOS on your device. Download the verified .dmg package or install via Homebrew.";
+          title = "NERV for macOS (Universal)";
+          desc = "We detected macOS on your device. Download the universal NERV disk image (.dmg).";
           btnText = "⬇ DOWNLOAD FOR MACOS (.DMG)";
+          downloadUrl = downloads.mac;
           highlightId = "card-mac";
         } else if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1) {
           os = "Linux";
-          title = "NERV 64 for Linux (x86_64)";
-          desc = "We detected Linux on your device. Download .deb, AppImage, or run the one-line bash installer.";
-          btnText = "⬇ DOWNLOAD FOR LINUX (.DEB / APPIMAGE)";
+          title = "NERV for Linux (x86_64)";
+          desc = "We detected Linux on your device. Download the portable NERV AppImage.";
+          btnText = "⬇ DOWNLOAD FOR LINUX (.APPIMAGE)";
+          downloadUrl = downloads.linux;
           highlightId = "card-linux";
         }
 
@@ -498,7 +502,10 @@
         const btnEl = document.getElementById("detected-download-btn");
         if (titleEl) titleEl.textContent = title;
         if (descEl) descEl.textContent = desc;
-        if (btnEl) btnEl.innerHTML = `<span>${btnText}</span>`;
+        if (btnEl) {
+          btnEl.href = downloadUrl;
+          btnEl.innerHTML = `<span>${btnText}</span>`;
+        }
 
         const card = document.getElementById(highlightId);
         if (card) card.classList.add("highlight");
