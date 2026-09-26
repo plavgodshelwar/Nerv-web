@@ -309,7 +309,7 @@
           </p>
 
           <div class="detected-action-row">
-            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-win-x64-setup.exe" class="btn-download-primary" id="detected-download-btn">
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.5.0/NERV-0.5.0-win-x64-setup.exe" class="btn-download-primary" id="detected-download-btn">
               <span>&#11015; DOWNLOAD FOR WINDOWS (x64)</span>
             </a>
             <span class="detected-checksum" id="detected-meta">Version 0.4.6 &bull; GitHub Release</span>
@@ -334,11 +334,11 @@
           <p class="platform-meta">Windows 10, 11 (64-bit / ARM64)</p>
 
           <div class="download-options-list">
-            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-win-x64-setup.exe" class="dl-option-link">
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.5.0/NERV-0.5.0-win-x64-setup.exe" class="dl-option-link">
               <span>NERV Installer (.exe)</span>
               <span>&darr; Download</span>
             </a>
-            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-win-x64-portable.exe" class="dl-option-link">
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.5.0/NERV-0.5.0-win-x64-portable.exe" class="dl-option-link">
               <span>Portable NERV (.exe)</span>
               <span>&darr; Download</span>
             </a>
@@ -353,21 +353,21 @@
         <div class="platform-card" id="card-mac">
           <div class="platform-icon-box">&#127822;</div>
           <h4 class="platform-name">MACOS</h4>
-          <p class="platform-meta">macOS 12.0+ (Apple Silicon &amp; Intel)</p>
+          <p class="platform-meta">macOS build coming soon</p>
 
           <div class="download-options-list">
-            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-mac-universal.dmg" class="dl-option-link">
-              <span>Universal macOS (.dmg)</span>
-              <span>&darr; Download</span>
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/tag/v0.5.0" class="dl-option-link">
+              <span>View release status</span>
+              <span>&rarr;</span>
             </a>
-            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-mac-universal.zip" class="dl-option-link">
-              <span>Updater archive (.zip)</span>
-              <span>&darr; Download</span>
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/tag/v0.5.0" class="dl-option-link">
+              <span>Follow future macOS builds</span>
+              <span>&rarr;</span>
             </a>
           </div>
 
           <div class="terminal-install-box">
-            brew install nerv64
+            macOS installer coming soon
           </div>
         </div>
 
@@ -378,7 +378,7 @@
           <p class="platform-meta">Debian, Ubuntu, Fedora, Arch</p>
 
           <div class="download-options-list">
-            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-linux-x86_64.AppImage" class="dl-option-link">
+            <a href="https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.5.0/NERV-0.5.0-linux-x86_64.AppImage" class="dl-option-link">
               <span>Universal (.AppImage)</span>
               <span>&darr; Download</span>
             </a>
@@ -471,9 +471,9 @@
         const ua = navigator.userAgent;
         let os = "Windows";
         const downloads = {
-          windows: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-win-x64-setup.exe",
-          mac: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-mac-universal.dmg",
-          linux: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.4.7/NERV-0.4.7-linux-x86_64.AppImage"
+          windows: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.5.0/NERV-0.5.0-win-x64-setup.exe",
+          mac: "https://github.com/plavgodshelwar/nerv-_app/releases/tag/v0.5.0",
+          linux: "https://github.com/plavgodshelwar/nerv-_app/releases/download/v0.5.0/NERV-0.5.0-linux-x86_64.AppImage"
         };
         let title = "NERV for Windows (x64)";
         let desc = "We detected Windows on your machine. Download the official NERV installer (.exe).";
@@ -483,9 +483,9 @@
 
         if (ua.indexOf("Mac") !== -1) {
           os = "macOS";
-          title = "NERV for macOS (Universal)";
-          desc = "We detected macOS on your device. Download the universal NERV disk image (.dmg).";
-          btnText = "⬇ DOWNLOAD FOR MACOS (.DMG)";
+          title = "NERV for macOS";
+          desc = "The initial NERV release supports Windows and Linux. Follow the release page for the upcoming macOS installer.";
+          btnText = "VIEW MACOS RELEASE STATUS";
           downloadUrl = downloads.mac;
           highlightId = "card-mac";
         } else if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1) {
