@@ -1,0 +1,7 @@
+account_id,customer_name,invoice_number,amount_inr,due_date,days_overdue,contact_email,phone,status
+ACC-001,GlobalTech Solutions,INV-101,18500,2026-08-20,37,accounts@globaltech.io,+91-9876543210,overdue
+ACC-002,Apex Dynamics,INV-102,68400,2026-08-15,42,billing@apexdyn.com,+91-9876543211,overdue
+ACC-003,Wayne Enterprises,INV-103,12200,2026-08-25,32,,+91-9876543212,overdue
+ACC-004,Cyberdyne Systems,INV-104,95000,2026-07-28,60,sarah@cyberdyne.net,+91-9876543213,overdue
+ACC-005,Stark Industries,INV-105,8500,2026-09-12,14,pepper@stark.com,+91-9876543214,current
+ACC-006,Umbreon Biotech,INV-106,54000,2026-08-10,47,accounts@umbreon.io,+91-9876543215,overdue

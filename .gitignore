@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Database & Runtime
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Temporary / Extracted
+nerv-site/
+nerv-site (2).zip
+video/
+*.log
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+main nerv/

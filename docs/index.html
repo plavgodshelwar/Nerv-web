@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NERV 64 — Autonomous Multi-Agent Digital Office</title>
+  <meta name="description" content="NERV 64 is an autonomous digital office of specialized AI agents coordinated by JEV Dispatcher and controlled via Telegram or Web.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Header (Deep Purple / Command Interface) -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Left: Circular NERV Emblem + Wordmark -->
+      <a href="#top" class="brand-group">
+        <div class="nerv-circle-emblem">
+          <img src="assets/nerv-eva-art.png" alt="NERV 64 Logo">
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-name">NERV<span class="accent-64">64</span></span>
+          <span class="brand-subtitle">OFFICE</span>
+        </div>
+      </a>
+
+      <!-- Center: Desktop Navigation -->
+      <nav class="header-nav">
+        <a href="#dashboard" class="nav-item active"><span class="nav-icon">&#127968;</span> Dashboard</a>
+        <a href="#office" class="nav-item"><span class="nav-icon">&#128187;</span> Office</a>
+        <a href="#architecture" class="nav-item"><span class="nav-icon">&#127970;</span> Architecture</a>
+        <a href="#jev" class="nav-item"><span class="nav-icon">&#128279;</span> JEV Router</a>
+        <a href="#telegram" class="nav-item"><span class="nav-icon">&#9992;&#65039;</span> Telegram Bot</a>
+        <a href="download.html" class="nav-item" style="color: var(--electric-pink);"><span class="nav-icon">&#11015;&#65039;</span> Download</a>
+      </nav>
+
+      <!-- Right: Dark Mode Toggle & Mobile Hamburger -->
+      <div class="header-actions">
+        <div class="theme-switch-wrapper">
+          <span>&#127769; Dark</span>
+          <label class="theme-switch" aria-label="Toggle Dark Mode">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <span class="theme-slider"></span>
+          </label>
+        </div>
+        <button class="mobile-nav-toggle" id="mobile-toggle-btn" aria-label="Toggle Menu">&#9776;</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <a href="#dashboard" class="nav-item active"><span class="nav-icon">&#127968;</span> Dashboard</a>
+      <a href="#office" class="nav-item"><span class="nav-icon">&#128187;</span> Office</a>
+      <a href="#architecture" class="nav-item"><span class="nav-icon">&#127970;</span> Architecture</a>
+      <a href="#jev" class="nav-item"><span class="nav-icon">&#128279;</span> JEV Router</a>
+      <a href="#telegram" class="nav-item"><span class="nav-icon">&#9992;&#65039;</span> Telegram Bot</a>
+      <a href="download.html" class="nav-item" style="color: var(--electric-pink);"><span class="nav-icon">&#11015;&#65039;</span> Download</a>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+
+    <!-- HERO SECTION (Centerpiece Golden 64 Panel) -->
+    <section class="hero-section">
+      <div class="hero-panel-card">
+        <!-- Pixel Corner Notches -->
+        <div class="hero-corner-decor hero-corner-tl"></div>
+        <div class="hero-corner-decor hero-corner-tr"></div>
+        <div class="hero-corner-decor hero-corner-bl"></div>
+        <div class="hero-corner-decor hero-corner-br"></div>
+
+        <div class="hero-grid">
+          <!-- Left Column -->
+          <div class="hero-content-col">
+            <span class="hero-eyebrow">WELCOME TO</span>
+            <h1 class="hero-main-title">
+              NERV <span class="text-pink">DIGITAL 64</span>
+            </h1>
+            <p class="hero-subtitle">Autonomous Multi-Agent Office (Restored)</p>
+
+            <p class="hero-description">
+              Multi-agent company loop: breaks business goals into parallel worker steps, calls real tools (spreadsheets, SQL databases, email), pauses for human approval over $50,000, and is controllable via Telegram or Web.
+            </p>
+
+            <!-- Metadata Panel (Chips inside cream box) -->
+            <div class="metadata-pill-panel">
+              <div class="meta-item">
+                <span class="meta-item-icon">&#9881;&#65039;</span>
+                <div class="meta-item-text">
+                  <span class="meta-item-label">PUBLISHER</span>
+                  <span class="meta-item-value">NERV AI</span>
+                </div>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-item-icon">&#128225;</span>
+                <div class="meta-item-text">
+                  <span class="meta-item-label">ROUTER</span>
+                  <span class="meta-item-value">JEV DISPATCHER</span>
+                </div>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-item-icon">&#128230;</span>
+                <div class="meta-item-text">
+                  <span class="meta-item-label">PLATFORM</span>
+                  <span class="meta-item-value">NERV 64 / PYTHON</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Row: Free Badge & DOWNLOAD Button -->
+            <div class="hero-action-row">
+              <div class="budget-display-tag" title="100% Free & Open Source Digital Office">
+                <span class="budget-icon-badge">&#128181;</span>
+                <span class="budget-amount">$0</span>
+                <span class="budget-label">+ 100% FREE</span>
+              </div>
+
+              <a href="download.html" class="btn-pixel-launch" id="hero-download-btn">
+                <span>&#11015; DOWNLOAD NERV 64</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Framed Pixel Art Display Panel -->
+          <div class="hero-art-display-frame">
+            <div class="art-container">
+              <img src="assets/nerv-eva-art.png" alt="NERV Unit-01 Pixel Art">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE CARDS ROW (4 Cards directly matching mockup) -->
+    <section class="feature-cards-section" id="architecture">
+      <div class="features-grid-row">
+        <!-- Card 1 -->
+        <div class="pixel-feature-card">
+          <div class="card-pixel-dot"></div>
+          <div class="card-pixel-icon">&#128279;</div>
+          <div class="card-content-wrap">
+            <h4 class="card-heading">Multi-Agent<br>Orchestration</h4>
+            <p class="card-body-text">Breaks goals into parallel worker steps</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pixel-feature-card">
+          <div class="card-pixel-dot"></div>
+          <div class="card-pixel-icon">&#128452;&#65039;</div>
+          <div class="card-content-wrap">
+            <h4 class="card-heading">Real Tool<br>Integration</h4>
+            <p class="card-body-text">Spreadsheets, SQL databases, email &amp; more</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pixel-feature-card">
+          <div class="card-pixel-dot"></div>
+          <div class="card-pixel-icon">&#128737;&#65039;</div>
+          <div class="card-content-wrap">
+            <h4 class="card-heading">Human<br>Oversight</h4>
+            <p class="card-body-text">Automatic approval for actions over $50,000</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="pixel-feature-card">
+          <div class="card-pixel-dot"></div>
+          <div class="card-pixel-icon">&#9992;&#65039;</div>
+          <div class="card-content-wrap">
+            <h4 class="card-heading">Control via<br>Telegram or Web</h4>
+            <p class="card-body-text">Operate your office anywhere remotely</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE AUTONOMOUS OFFICE SECTION (The Centerpiece Simulation) -->
+    <section class="autonomous-office-section" id="office">
+      <div class="office-section-header">
+        <h2 class="office-section-title">AUTONOMOUS OFFICE</h2>
+        <p class="office-section-sub">Watch the digital workforce operate on its own.</p>
+      </div>
+
+      <!-- Scroll-Driven Expansion Stage -->
+      <div class="office-scroll-stage">
+        <div class="live-office-frame" id="live-office-frame">
+          <div class="office-frame-topbar">
+            <span class="office-frame-title">NERV OFFICE 64</span>
+            <span class="office-frame-agents">5 AGENTS ONLINE</span>
+            <span class="office-live-badge">
+              <span class="live-pulse-dot"></span> LIVE
+            </span>
+          </div>
+
+          <div class="office-viewport-wrap">
+            <video 
+              src="assets/nerv-office-sim.mp4" 
+              autoplay 
+              loop 
+              muted 
+              playsinline 
+              class="office-sim-video"
+              title="NERV Autonomous Office Simulation">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE OPERATIONS DASHBOARD -->
+    <section class="dashboard-terminal-section" id="dashboard">
+      <div class="terminal-panel-card">
+        <div class="panel-header-row">
+          <div>
+            <h2 class="panel-header-title">OPERATIONS COMMAND</h2>
+            <p style="font-family: var(--font-mono); font-size: 13px; color: var(--muted-purple);">
+              Perceive &bull; Plan &bull; Act &bull; Observe &bull; Re-Plan &bull; Escalate
+            </p>
+          </div>
+          <div class="panel-socket-badge" id="ws-status">&#9679; LIVE SOCKET</div>
+        </div>
+
+        <!-- Preset Controls Bar -->
+        <div class="preset-bar-row">
+          <span class="preset-bar-label">DEMO PRESETS:</span>
+          <button class="btn-preset-chip primary" id="preset-golden">&#9654; Run Golden Path Demo</button>
+          <button class="btn-preset-chip warn" id="preset-failure">&#128165; Simulate Failure &amp; Recovery</button>
+          <button class="btn-preset-chip" id="preset-mode">&#9881;&#65039; Toggle Approval Gate</button>
+          <button class="btn-preset-chip" id="preset-reset">&#8634; Reset Database</button>
+        </div>
+
+        <!-- Goal Input Box -->
+        <div class="goal-input-box">
+          <span style="font-size: 18px;">&#127919;</span>
+          <input type="text" id="goal-input" value="Chase overdue invoices over $10,000" placeholder="Type a business goal for the office...">
+          <button class="btn-dispatch" id="dispatch-goal-btn">DISPATCH GOAL</button>
+        </div>
+
+        <!-- 5 Agent Cards Matrix -->
+        <div class="agent-cards-row">
+          <!-- Manager -->
+          <div class="pixel-agent-panel" id="card-manager">
+            <div class="agent-top-line">
+              <span class="agent-glyph">&#129504;</span>
+              <span class="agent-title-text">Manager Agent</span>
+              <span class="agent-badge-chip" id="badge-manager">IDLE</span>
+            </div>
+            <p class="agent-detail-text" id="desc-manager">Waiting for next business goal.</p>
+            <div class="agent-tags-box">
+              <span class="agent-tag">Loop Driver</span>
+              <span class="agent-tag">Escalator</span>
+            </div>
+          </div>
+
+          <!-- JEV -->
+          <div class="pixel-agent-panel" id="card-jev">
+            <div class="agent-top-line">
+              <span class="agent-glyph">&#9889;</span>
+              <span class="agent-title-text">JEV Dispatcher</span>
+              <span class="agent-badge-chip" id="badge-jev">IDLE</span>
+            </div>
+            <p class="agent-detail-text" id="desc-jev">Prompt caching and 0-token code routing.</p>
+            <div class="agent-tags-box">
+              <span class="agent-tag">Code Tier</span>
+              <span class="agent-tag">DeepSeek</span>
+            </div>
+          </div>
+
+          <!-- Data -->
+          <div class="pixel-agent-panel" id="card-data">
+            <div class="agent-top-line">
+              <span class="agent-glyph">&#128202;</span>
+              <span class="agent-title-text">Data Agent</span>
+              <span class="agent-badge-chip" id="badge-data">IDLE</span>
+            </div>
+            <p class="agent-detail-text" id="desc-data">Reads accounts &amp; detects missing records.</p>
+            <div class="agent-tags-box">
+              <span class="agent-tag">Spreadsheets</span>
+              <span class="agent-tag">Self-Healing</span>
+            </div>
+          </div>
+
+          <!-- Finance -->
+          <div class="pixel-agent-panel" id="card-finance">
+            <div class="agent-top-line">
+              <span class="agent-glyph">&#128176;</span>
+              <span class="agent-title-text">Finance Agent</span>
+              <span class="agent-badge-chip" id="badge-finance">IDLE</span>
+            </div>
+            <p class="agent-detail-text" id="desc-finance">Auditing amounts &gt; $50,000 threshold.</p>
+            <div class="agent-tags-box">
+              <span class="agent-tag">Risk Gate</span>
+              <span class="agent-tag">Parallel</span>
+            </div>
+          </div>
+
+          <!-- Comms -->
+          <div class="pixel-agent-panel" id="card-comms">
+            <div class="agent-top-line">
+              <span class="agent-glyph">&#9993;&#65039;</span>
+              <span class="agent-title-text">Comms Agent</span>
+              <span class="agent-badge-chip" id="badge-comms">IDLE</span>
+            </div>
+            <p class="agent-detail-text" id="desc-comms">Drafting tailored emails per customer risk.</p>
+            <div class="agent-tags-box">
+              <span class="agent-tag">send_email</span>
+              <span class="agent-tag">Adaptive Tone</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Split: Terminal & Human Approval Queue -->
+        <div class="split-ops-row">
+          <!-- Live Terminal Shell -->
+          <div class="terminal-shell-box">
+            <div class="terminal-header-bar">
+              <span class="terminal-header-label">NERV-TERMINAL &bull; LIVE REASONING FEED</span>
+              <button class="btn-terminal-clear" id="clear-log-btn">CLEAR</button>
+            </div>
+            <div class="terminal-scroll-area" id="live-terminal-feed">
+              <div class="log-line">
+                <span class="time">[12:00:00]</span> <span class="prefix">[SYSTEM]</span> NERV 64 Multi-Agent Office online. Ready for goals.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Widgets Column -->
+          <div class="right-ops-col">
+            <!-- Approval Queue -->
+            <div class="ops-card-widget">
+              <div class="widget-head-row">
+                <span class="widget-title">HUMAN APPROVAL QUEUE</span>
+                <span class="widget-badge" id="approval-count-badge">0 PENDING</span>
+              </div>
+              <div class="approval-list-scroll" id="approval-queue-list">
+                <div class="empty-approval-notice">
+                  &#9989; Queue clear. Actions exceeding $50k pause here.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accounts Monitor -->
+            <div class="ops-card-widget">
+              <div class="widget-head-row">
+                <span class="widget-title">ACCOUNTS MONITOR</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--muted-purple);" id="accounts-count-summary">6 records</span>
+              </div>
+              <div class="accounts-list-scroll" id="accounts-table-body">
+                <!-- Injected via script.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- JEV ROUTER & TELEGRAM SECTION -->
+    <section class="secondary-panels-section" id="jev">
+      <div class="secondary-grid-row">
+        <!-- Left: JEV Router Architecture -->
+        <div class="secondary-panel-card">
+          <h3 class="section-pixel-title">JEV DISPATCHER ARCHITECTURE</h3>
+          <p class="section-desc-mono">Sits below DeepSeek/Main API &bull; 60&ndash;80% Token Reduction</p>
+
+          <div class="jev-lanes-stack">
+            <div class="jev-lane-box">
+              <span class="lane-badge code">TIER 1: CODE</span>
+              <h5>0 Tokens Spent</h5>
+              <p>Deterministic checks (days overdue &gt; 30, invoice &gt; $50k) run directly in Python. 0 tokens burned.</p>
+            </div>
+
+            <div class="jev-lane-box">
+              <span class="lane-badge small">TIER 2: SMALL MODEL</span>
+              <h5>Lightweight &amp; Fast</h5>
+              <p>Contact parsing, schema validation, and table extraction routed to fast cheap model.</p>
+            </div>
+
+            <div class="jev-lane-box">
+              <span class="lane-badge large">TIER 3: MAIN MODEL</span>
+              <h5>Deep Judgment</h5>
+              <p>Reserved strictly for emotional tone judgment in correspondence and emergency re-planning.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Telegram Bot Control -->
+        <div class="secondary-panel-card" id="telegram">
+          <h3 class="section-pixel-title">TELEGRAM BOT CONTROL (@nervvbot)</h3>
+          <p class="section-desc-mono">Phone approval sync &bull; Same backend state</p>
+
+          <div class="telegram-sim-wrap">
+            <div class="tg-chat-frame" id="sim-phone-chat">
+              <div class="tg-bubble bot">
+                &#127970; <strong>NERV Digital Office Bot</strong><br>
+                Connected to Manager Agent.<br>
+                Send <code>/status</code>, <code>/goal</code>, or <code>/approvals</code>.
+              </div>
+              <div class="tg-bubble bot">
+                &#9888;&#65039; <strong>Approval Request [appr-01]</strong><br>
+                Invoice for Apex Dynamics (<strong>$68,400</strong>) exceeds threshold.<br>
+                Approve sending collection notice?
+                <div style="display: flex; gap: 6px; margin-top: 6px;">
+                  <button class="btn-appr-action yes" onclick="simulateTelegramAction('approve')">&#9989; Approve</button>
+                  <button class="btn-appr-action no" onclick="simulateTelegramAction('reject')">&#10060; Reject</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="tg-input-row">
+              <input type="text" id="sim-tg-input" placeholder="Type /status or goal...">
+              <button id="sim-tg-send-btn">&#10148;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIT TRAIL SECTION -->
+    <section class="audit-trail-section" id="audit">
+      <div class="audit-table-card">
+        <div class="panel-header-row">
+          <div>
+            <h3 class="section-pixel-title">TIMESTAMPED AUDIT TRAIL</h3>
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--muted-purple);">
+              Verifiable log of every agent action, tool invocation, and token savings
+            </p>
+          </div>
+          <button class="btn-preset-chip" id="refresh-audit-btn">&#8634; REFRESH LOG</button>
+        </div>
+
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th>TIME</th>
+              <th>AGENT</th>
+              <th>ACTION</th>
+              <th>TIER</th>
+              <th>DETAILS</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody id="audit-table-body">
+            <!-- Injected via script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>NERV 64</strong> &bull; Autonomous Multi-Agent Office &bull; 2026
+      </div>
+      <div>
+        <a href="download.html" style="color: var(--cream); text-decoration: underline;">Downloads &amp; System Requirements &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

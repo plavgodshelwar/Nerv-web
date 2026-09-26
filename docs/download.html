@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download NERV 64 — Autonomous Multi-Agent Office</title>
+  <meta name="description" content="Download NERV 64 for Windows, macOS, or Linux. The autonomous multi-agent office that runs locally on your machine.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Download Page Specific Polished Styles */
+    .download-hero {
+      padding: 40px 0 24px;
+      text-align: center;
+    }
+    .download-title {
+      font-family: var(--font-pixel-chunky);
+      font-size: clamp(32px, 4.5vw, 52px);
+      color: var(--card-text);
+      margin-bottom: 8px;
+    }
+    .download-sub {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--muted-purple);
+      margin-bottom: 32px;
+    }
+    
+    /* Detected Platform Hero Card */
+    .detected-platform-card {
+      background: var(--hero-bg);
+      border: var(--pixel-border-thick);
+      border-radius: var(--radius-panel);
+      padding: 32px 36px;
+      box-shadow: 0 8px 0 var(--border-dark);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      transition: background-color 200ms ease;
+    }
+    .detected-left {
+      max-width: 650px;
+    }
+    .comp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--deep-purple);
+      color: #FFFFFF;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: var(--font-pixel-mono);
+      font-size: 9px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .detected-os-name {
+      font-family: var(--font-pixel-chunky);
+      font-size: 28px;
+      color: #0B0710;
+      margin-bottom: 8px;
+    }
+    .detected-os-desc {
+      font-size: 13.5px;
+      color: var(--hero-sub);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .detected-action-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-download-primary {
+      background-color: var(--electric-pink);
+      color: #FFFFFF;
+      border: 2.5px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 12px 28px;
+      font-family: var(--font-pixel-mono);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 0 var(--border-dark);
+      transition: all 120ms ease;
+    }
+    .btn-download-primary:hover {
+      background-color: var(--electric-pink-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 var(--border-dark);
+    }
+    .btn-download-primary:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 var(--border-dark);
+    }
+    .detected-checksum {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--hero-sub);
+    }
+
+    .detected-right-mascot {
+      width: 140px;
+      height: 140px;
+      background: #FFF8F0;
+      border: 2.5px solid var(--border-dark);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      box-shadow: 0 4px 0 var(--border-dark);
+      flex-shrink: 0;
+    }
+
+    /* All Platforms Grid */
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .platform-card {
+      background: var(--card-bg);
+      border: var(--pixel-border);
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+      box-shadow: 0 4px 0 var(--border-dark);
+      display: flex;
+      flex-direction: column;
+    }
+    .platform-card.highlight {
+      border-color: var(--electric-pink);
+      box-shadow: 0 0 12px rgba(255, 43, 120, 0.2), 0 4px 0 var(--border-dark);
+    }
+    .platform-icon-box {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .platform-name {
+      font-family: var(--font-pixel-mono);
+      font-size: 14px;
+      color: var(--card-text);
+      margin-bottom: 6px;
+    }
+    .platform-meta {
+      font-size: 12px;
+      color: var(--muted-purple);
+      margin-bottom: 18px;
+    }
+    .download-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .dl-option-link {
+      background: rgba(0,0,0,0.03);
+      border: 1.5px solid var(--border-color);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--card-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 120ms ease;
+    }
+    .dl-option-link:hover {
+      background: rgba(255, 43, 120, 0.1);
+      border-color: var(--electric-pink);
+      color: var(--electric-pink);
+    }
+    .terminal-install-box {
+      margin-top: auto;
+      background: var(--terminal-bg);
+      border: 1.5px solid var(--border-dark);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #38bdf8;
+      word-break: break-all;
+    }
+
+    /* System Requirements Section */
+    .specs-card {
+      background: var(--card-bg);
+      border: var(--pixel-border);
+      border-radius: var(--radius-panel);
+      padding: 28px;
+      box-shadow: 0 4px 0 var(--border-dark);
+      margin-bottom: 60px;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .spec-item {
+      background: rgba(0,0,0,0.03);
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+    }
+    .spec-item strong {
+      font-family: var(--font-pixel-mono);
+      font-size: 9px;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--card-text);
+    }
+
+    @media (max-width: 900px) {
+      .detected-platform-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .detected-right-mascot {
+        display: none;
+      }
+      .platforms-grid {
+        grid-template-columns: 1fr;
+      }
+      .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header (Deep Purple / Command Interface) -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Left: Circular NERV Emblem + Wordmark -->
+      <a href="index.html#top" class="brand-group">
+        <div class="nerv-circle-emblem">
+          <img src="assets/nerv-eva-art.png" alt="NERV 64 Logo">
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-name">NERV<span class="accent-64">64</span></span>
+          <span class="brand-subtitle">OFFICE</span>
+        </div>
+      </a>
+
+      <!-- Center: Desktop Navigation -->
+      <nav class="header-nav">
+        <a href="index.html#dashboard" class="nav-item"><span class="nav-icon">&#127968;</span> Dashboard</a>
+        <a href="index.html#architecture" class="nav-item"><span class="nav-icon">&#127970;</span> Architecture</a>
+        <a href="index.html#jev" class="nav-item"><span class="nav-icon">&#128279;</span> JEV Router</a>
+        <a href="index.html#telegram" class="nav-item"><span class="nav-icon">&#9992;&#65039;</span> Telegram Bot</a>
+        <a href="download.html" class="nav-item active"><span class="nav-icon">&#11015;&#65039;</span> Download</a>
+      </nav>
+
+      <!-- Right: Dark Mode Toggle & Mobile Hamburger -->
+      <div class="header-actions">
+        <div class="theme-switch-wrapper">
+          <span>&#127769; Dark</span>
+          <label class="theme-switch" aria-label="Toggle Dark Mode">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <span class="theme-slider"></span>
+          </label>
+        </div>
+        <button class="mobile-nav-toggle" id="mobile-toggle-btn" aria-label="Toggle Menu">&#9776;</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <a href="index.html#dashboard" class="nav-item"><span class="nav-icon">&#127968;</span> Dashboard</a>
+      <a href="index.html#architecture" class="nav-item"><span class="nav-icon">&#127970;</span> Architecture</a>
+      <a href="index.html#jev" class="nav-item"><span class="nav-icon">&#128279;</span> JEV Router</a>
+      <a href="index.html#telegram" class="nav-item"><span class="nav-icon">&#9992;&#65039;</span> Telegram Bot</a>
+      <a href="download.html" class="nav-item active"><span class="nav-icon">&#11015;&#65039;</span> Download</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Download Hero Heading -->
+    <section class="download-hero">
+      <h1 class="download-title">GET NERV 64</h1>
+      <p class="download-sub">The autonomous digital AI workforce. Local-first, private by design, controlled via Web or Telegram.</p>
+
+      <!-- Dynamic Detected Platform Card -->
+      <div class="detected-platform-card" id="detected-box">
+        <div class="detected-left">
+          <div class="comp-badge">&#9733; COMPATIBLE WITH YOUR SYSTEM &#9733;</div>
+          <h2 class="detected-os-name" id="detected-os-title">NERV 64 for Windows (x64)</h2>
+          <p class="detected-os-desc" id="detected-os-desc">
+            We detected your system. Download the official installer with integrated local sandbox and background Telegram listener.
+          </p>
+
+          <div class="detected-action-row">
+            <a href="#direct-download" class="btn-download-primary" id="detected-download-btn">
+              <span>&#11015; DOWNLOAD FOR WINDOWS (x64)</span>
+            </a>
+            <span class="detected-checksum" id="detected-meta">Version 0.6.4 &bull; SHA-256 Verified</span>
+          </div>
+        </div>
+
+        <div class="detected-right-mascot">&#128187;</div>
+      </div>
+    </section>
+
+    <!-- All Available Platforms Grid -->
+    <section>
+      <h3 style="font-family: var(--font-pixel-mono); font-size: 14px; margin-bottom: 16px; color: var(--card-text);">
+        ALL SUPPORTED PLATFORMS
+      </h3>
+
+      <div class="platforms-grid">
+        <!-- Windows -->
+        <div class="platform-card" id="card-win">
+          <div class="platform-icon-box">&#129679;</div>
+          <h4 class="platform-name">WINDOWS</h4>
+          <p class="platform-meta">Windows 10, 11 (64-bit / ARM64)</p>
+
+          <div class="download-options-list">
+            <a href="#" class="dl-option-link">
+              <span>NERV 64 Installer (.exe)</span>
+              <span>&darr; 84 MB</span>
+            </a>
+            <a href="#" class="dl-option-link">
+              <span>Portable Standalone (.zip)</span>
+              <span>&darr; 78 MB</span>
+            </a>
+          </div>
+
+          <div class="terminal-install-box">
+            winget install nerv64
+          </div>
+        </div>
+
+        <!-- macOS -->
+        <div class="platform-card" id="card-mac">
+          <div class="platform-icon-box">&#127822;</div>
+          <h4 class="platform-name">MACOS</h4>
+          <p class="platform-meta">macOS 12.0+ (Apple Silicon &amp; Intel)</p>
+
+          <div class="download-options-list">
+            <a href="#" class="dl-option-link">
+              <span>Apple Silicon (.dmg)</span>
+              <span>&darr; 82 MB</span>
+            </a>
+            <a href="#" class="dl-option-link">
+              <span>Intel Mac (.dmg)</span>
+              <span>&darr; 86 MB</span>
+            </a>
+          </div>
+
+          <div class="terminal-install-box">
+            brew install nerv64
+          </div>
+        </div>
+
+        <!-- Linux -->
+        <div class="platform-card" id="card-linux">
+          <div class="platform-icon-box">&#128039;</div>
+          <h4 class="platform-name">LINUX</h4>
+          <p class="platform-meta">Debian, Ubuntu, Fedora, Arch</p>
+
+          <div class="download-options-list">
+            <a href="#" class="dl-option-link">
+              <span>Debian / Ubuntu (.deb)</span>
+              <span>&darr; 76 MB</span>
+            </a>
+            <a href="#" class="dl-option-link">
+              <span>Universal (.AppImage)</span>
+              <span>&darr; 80 MB</span>
+            </a>
+          </div>
+
+          <div class="terminal-install-box">
+            curl -fsSL https://nerv.ai/install.sh | bash
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Requirements Specs -->
+    <section class="specs-card">
+      <h3 style="font-family: var(--font-pixel-mono); font-size: 13px; color: var(--card-text);">
+        SYSTEM REQUIREMENTS
+      </h3>
+      <div class="specs-grid">
+        <div class="spec-item">
+          <strong>OPERATING SYSTEM</strong>
+          <span>Windows 10/11, macOS 12+, Ubuntu 20.04+</span>
+        </div>
+        <div class="spec-item">
+          <strong>MEMORY (RAM)</strong>
+          <span>4 GB minimum (8 GB recommended for parallel workers)</span>
+        </div>
+        <div class="spec-item">
+          <strong>SANDBOX RUNTIME</strong>
+          <span>Built-in Python 3.10+ container / isolated subprocess</span>
+        </div>
+        <div class="spec-item">
+          <strong>CHANNELS</strong>
+          <span>Local browser (localhost:8000) + Telegram Bot API</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>NERV 64</strong> &bull; Autonomous Multi-Agent Office &bull; 2026
+      </div>
+      <div>
+        <a href="index.html" style="color: var(--cream); text-decoration: underline;">Return to Live Office &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme sync & persistence
+    (function() {
+      const themeCheckbox = document.getElementById("theme-toggle-checkbox");
+      const savedTheme = localStorage.getItem("nerv-theme") || "light";
+
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        if (themeCheckbox) themeCheckbox.checked = true;
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        if (themeCheckbox) themeCheckbox.checked = false;
+      }
+
+      if (themeCheckbox) {
+        themeCheckbox.addEventListener("change", (e) => {
+          const isDark = e.target.checked;
+          if (isDark) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("nerv-theme", "dark");
+          } else {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("nerv-theme", "light");
+          }
+        });
+      }
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById("mobile-toggle-btn");
+      const mobileDrawer = document.getElementById("mobile-drawer");
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener("click", () => {
+          mobileDrawer.classList.toggle("open");
+        });
+      }
+
+      // Dynamic OS Detection
+      function detectUserOS() {
+        const ua = navigator.userAgent;
+        let os = "Windows";
+        let title = "NERV 64 for Windows (x64)";
+        let desc = "We detected Windows on your machine. Download the Windows installer (.exe) with local sandboxing.";
+        let btnText = "⬇ DOWNLOAD FOR WINDOWS (.EXE)";
+        let highlightId = "card-win";
+
+        if (ua.indexOf("Mac") !== -1) {
+          os = "macOS";
+          title = "NERV 64 for macOS (Apple Silicon / Intel)";
+          desc = "We detected macOS on your device. Download the verified .dmg package or install via Homebrew.";
+          btnText = "⬇ DOWNLOAD FOR MACOS (.DMG)";
+          highlightId = "card-mac";
+        } else if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1) {
+          os = "Linux";
+          title = "NERV 64 for Linux (x86_64)";
+          desc = "We detected Linux on your device. Download .deb, AppImage, or run the one-line bash installer.";
+          btnText = "⬇ DOWNLOAD FOR LINUX (.DEB / APPIMAGE)";
+          highlightId = "card-linux";
+        }
+
+        const titleEl = document.getElementById("detected-os-title");
+        const descEl = document.getElementById("detected-os-desc");
+        const btnEl = document.getElementById("detected-download-btn");
+        if (titleEl) titleEl.textContent = title;
+        if (descEl) descEl.textContent = desc;
+        if (btnEl) btnEl.innerHTML = `<span>${btnText}</span>`;
+
+        const card = document.getElementById(highlightId);
+        if (card) card.classList.add("highlight");
+      }
+
+      detectUserOS();
+    })();
+  </script>
+</body>
+</html>
